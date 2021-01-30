@@ -1,0 +1,935 @@
+﻿@model List<project2.Models.postwithComment>
+@using project2.Models;
+@{
+
+    ViewBag.Title = "NewsFeed";
+    Layout = "~/Views/Shared/_MenuLayoutPage.cshtml";
+    var ProfileIntro = ViewBag.ProfileIntrobg;
+    var post = ViewBag.Profilepostbg;
+    var Frindlist = ViewBag.Frindlist;
+    var cuser = ViewBag.cuser;
+    var post_likes = ViewBag.postlikes;
+}
+
+
+
+
+<!-- Responsive Header-BP -->
+
+<header class="header header-responsive" id="site-header-responsive">
+
+    <div class="header-content-wrapper">
+        <ul class="nav nav-tabs mobile-app-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#request" role="tab">
+                    <div class="control-icon has-items">
+                        <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                        <div class="label-avatar bg-blue">6</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#chat" role="tab">
+                    <div class="control-icon has-items">
+                        <svg class="olymp-chat---messages-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+                        <div class="label-avatar bg-purple">2</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#notification" role="tab">
+                    <div class="control-icon has-items">
+                        <svg class="olymp-thunder-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+                        <div class="label-avatar bg-primary">8</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#search" role="tab">
+                    <svg class="olymp-magnifying-glass-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+                    <svg class="olymp-close-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="tab-content tab-content-responsive">
+
+        <div class="tab-pane " id="request" role="tabpanel">
+
+            <div class="mCustomScrollbar" data-mcs-theme="dark">
+                <div class="ui-block-title ui-block-title-small">
+                    <h6 class="title">FRIEND REQUESTS</h6>
+                    <a href="#">Find Friends</a>
+                    <a href="#">Settings</a>
+                </div>
+                <ul class="notification-list friend-requests">
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar55-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Tamara Romanoff</a>
+                            <span class="chat-message-item">Mutual Friend: Sarah Hetfield</span>
+                        </div>
+                        <span class="notification-icon">
+                            <a href="#" class="accept-request">
+                                <span class="icon-add without-text">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                            <a href="#" class="accept-request request-del">
+                                <span class="icon-minus">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar56-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Tony Stevens</a>
+                            <span class="chat-message-item">4 Friends in Common</span>
+                        </div>
+                        <span class="notification-icon">
+                            <a href="#" class="accept-request">
+                                <span class="icon-add without-text">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                            <a href="#" class="accept-request request-del">
+                                <span class="icon-minus">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+                    <li class="accepted">
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar57-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar58-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Stagg Clothing</a>
+                            <span class="chat-message-item">9 Friends in Common</span>
+                        </div>
+                        <span class="notification-icon">
+                            <a href="#" class="accept-request">
+                                <span class="icon-add without-text">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                            <a href="#" class="accept-request request-del">
+                                <span class="icon-minus">
+                                    <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                </span>
+                            </a>
+
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="view-all bg-blue">Check all your Events</a>
+            </div>
+
+        </div>
+
+        <div class="tab-pane " id="chat" role="tabpanel">
+
+            <div class="mCustomScrollbar" data-mcs-theme="dark">
+                <div class="ui-block-title ui-block-title-small">
+                    <h6 class="title">Chat / Messages</h6>
+                    <a href="#">Mark all as read</a>
+                    <a href="#">Settings</a>
+                </div>
+
+                <ul class="notification-list chat-message">
+                    <li class="message-unread">
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar59-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Diana Jameson</a>
+                            <span class="chat-message-item">Hi James! It’s Diana, I just wanted to let you know that we have to reschedule...</span>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-chat---messages-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+                        </span>
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar60-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Jake Parker</a>
+                            <span class="chat-message-item">Great, I’ll see you tomorrow!.</span>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-chat---messages-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar61-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">Elaine Dreyfuss</a>
+                            <span class="chat-message-item">We’ll have to check that at the office and see if the client is on board with...</span>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 9:56pm</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-chat---messages-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+                        </span>
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+
+                    <li class="chat-group">
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar11-sm.jpg" alt="author">
+                            <img src="~/Content/img/avatar12-sm.jpg" alt="author">
+                            <img src="~/Content/img/avatar13-sm.jpg" alt="author">
+                            <img src="~/Content/img/avatar10-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <a href="#" class="h6 notification-friend">You, Faye, Ed &amp; Jet +3</a>
+                            <span class="last-message-author">Ed:</span>
+                            <span class="chat-message-item">Yeah! Seems fine by me!</span>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 16th at 10:23am</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-chat---messages-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+                        </span>
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#" class="view-all bg-purple">View All Messages</a>
+            </div>
+
+        </div>
+
+        <div class="tab-pane " id="notification" role="tabpanel">
+
+            <div class="mCustomScrollbar" data-mcs-theme="dark">
+                <div class="ui-block-title ui-block-title-small">
+                    <h6 class="title">Notifications</h6>
+                    <a href="#">Mark all as read</a>
+                    <a href="#">Settings</a>
+                </div>
+
+                <ul class="notification-list">
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar62-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-comments-post-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+
+                    <li class="un-read">
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar63-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <div>You and <a href="#" class="h6 notification-friend">Nicholas Grissom</a> just became friends. Write on <a href="#" class="notification-link">his wall</a>.</div>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 hours ago</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+
+                    <li class="with-comment-photo">
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar64-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <div><a href="#" class="h6 notification-friend">Sarah Hetfield</a> commented on your <a href="#" class="notification-link">photo</a>.</div>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 5:32am</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-comments-post-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+                        </span>
+
+                        <div class="comment-photo">
+                            <img src="~/Content/img/comment-photo1.jpg" alt="photo">
+                            <span>“She looks incredible in that outfit! We should see each...”</span>
+                        </div>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar65-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <div><a href="#" class="h6 notification-friend">Green Goo Rock</a> invited you to attend to his event Goo in <a href="#" class="notification-link">Gotham Bar</a>.</div>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 5th at 6:43pm</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-happy-face-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="author-thumb">
+                            <img src="~/Content/img/avatar66-sm.jpg" alt="author">
+                        </div>
+                        <div class="notification-event">
+                            <div><a href="#" class="h6 notification-friend">James Summers</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
+                            <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 2nd at 8:29pm</time></span>
+                        </div>
+                        <span class="notification-icon">
+                            <svg class="olymp-heart-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+                        </span>
+
+                        <div class="more">
+                            <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                            <svg class="olymp-little-delete"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="#" class="view-all bg-primary">View All Notifications</a>
+            </div>
+
+        </div>
+
+        <div class="tab-pane " id="search" role="tabpanel">
+
+
+            <form class="search-bar w-search notification-list friend-requests">
+                <div class="form-group with-button">
+
+                    <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+    <!-- ... end  Tab panes -->
+
+</header>
+
+<!-- ... end Responsive Header-BP -->
+<div class="header-spacer"></div>
+
+
+<div class="container">
+    <div class="row">
+
+        <!-- Main Content -->
+
+        <main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+
+            <div class="ui-block">
+
+                <!-- News Feed Form  -->
+
+                <div class="news-feed-form">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active inline-items" data-toggle="tab" href="#text_post" role="tab"
+                               aria-expanded="true">
+
+                                <svg class="olymp-status-icon">
+                                    <use xlink:href="svg-icons/sprites/icons.svg#olymp-status-icon"></use>
+                                </svg>
+
+                                <span>Text Post</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link inline-items" data-toggle="tab" href="#photo_post" role="tab"
+                               aria-expanded="false">
+
+                                <svg class="olymp-multimedia-icon">
+                                    <use xlink:href="svg-icons/sprites/icons.svg#olymp-multimedia-icon"></use>
+                                </svg>
+
+                                <span>Photo Post</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link inline-items" data-toggle="tab" href="#video_post" role="tab"
+                               aria-expanded="false">
+                                <svg class="olymp-blog-icon">
+                                    <use xlink:href="svg-icons/sprites/icons.svg#olymp-blog-icon"></use>
+                                </svg>
+
+                                <span>Video Post</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="text_post" role="tabpanel" aria-expanded="true">
+
+                            @using (Html.BeginForm("TextPost", "NewsFeed", FormMethod.Post))
+                            {
+
+                                <div class="form-group with-icon label-floating is-empty">
+                                    <div class="h6 author-thumb">
+                                        <img src="/post/ImageRetrieve?id=1" style=" height: 40px; width: 40px;" alt="author">
+                                    </div>
+                                    <label class="control-label">Share what you are thinking here...</label>
+
+                                    @Html.TextArea("Description", "", new { @class = "form-control" })
+
+                                </div>
+                                <div class="add-options-message">
+
+
+                                    <input type="submit" value="upload Text file" style="background-color:orangered; color:white" />
+
+                                </div>
+                            }
+                        </div>
+
+                        <div class="tab-pane" id="photo_post" role="tabpanel" aria-expanded="true">
+                            @using (Html.BeginForm("PhotoUPload", "NewsFeed", FormMethod.Post,
+                                  new { enctype = "multipart/form-data", id = "upProImg_form" }))
+                            {
+
+
+                                <div class="form-group with-icon label-floating is-empty">
+                                    <div class="author-thumb">
+                                        <img src="/post/ImageRetrieve?id=1" style="
+    height: 40px;
+    width: 40px;
+" alt="author">
+                                    </div>
+                                    <label class="control-label">Share what you are thinking here...</label>
+                                    @Html.TextArea("PhotoDescription", "", new { @class = "form-control" })
+                                </div>
+                                <div class="add-options-message">
+
+                                    <div class="custom-file">
+                                        @Html.TextBox("file", " ", new { type = "file" })
+
+                                        <input type="submit" value="upload image file" style="background-color:orangered; color:white" />
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+
+                        <div class="tab-pane" id="video_post" role="tabpanel" aria-expanded="true">
+                            @using (Html.BeginForm("VideoUpload", "NewsFeed", FormMethod.Post,
+                                   new { enctype = "multipart/form-data" }))
+                            {
+
+                                <div class="form-group with-icon label-floating is-empty">
+                                    <div class="author-thumb">
+                                        <img src="/post/ImageRetrieve?id=1" style="
+    height: 40px;
+    width: 40px;
+" alt="author">
+                                    </div>
+                                    <label class="control-label">Share what you are thinking here...</label>
+                                    @Html.TextArea("VideoDescription", "", new { @class = "form-control" })
+                                </div>
+                                <div class="add-options-message">
+
+                                    <div class="form-group">
+                                        <label>Upload video file</label>
+
+                                        <div class="input-group">
+                                            @Html.TextBox("videofile", " ", new { type = "file" })
+                                            <br />
+                                            <input type="submit" value="upload video file" style="background-color:orangered; color:white " />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ... end News Feed Form  -->
+            </div>
+
+            <div id="newsfeed-items-grid">
+                @foreach (postwithComment item in Model)
+                {
+
+                    <div class="ui-block">
+
+                        <article class="hentry post video">
+
+                            <div class="post__author author vcard inline-items">
+                                <img src="/post/ImageRetrieve?id=1" alt="author">
+
+                                <div class="author-date">
+                                    <a class="h6 post__author-name fn" href="#">
+                                        @Html.Label("user_bio", (string)Session["username"])
+                                        <div class="post__date">
+                                            <time class="published" datetime="2004-07-24T18:18">
+                                                @*         @Html.Label("datetime",(DateTime)@item.user_create_date)*@
+
+                                            </time>
+                                        </div>
+                                </div>
+
+                                <div class="more">
+                                    <svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+                                    <ul class="more-dropdown">
+                                        <li>
+                                            <a href="#">Edit Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete Post</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            @if (item.cpost.post_type != 0)
+                            {
+                                @Html.Label("description", (string)@item.cpost.description)
+
+                            }
+
+                            <div class="post-video">
+                                <div class="video-thumb">
+                                    <div class="video-frame">
+                                        <a href="Javascript:void(0)">
+                                            @if (item.cpost.post_type == 0)
+                                            {
+                                                @Html.Label("description", (string)@item.cpost.description, new { @class = "post_text" })
+
+                                            }
+                                            else if (item.cpost.post_type == 1)
+                                            {
+
+                                                <img src="@item.cpost.media_path">
+
+                                            }
+                                            else
+                                            {
+                                                <video src="@item.cpost.media_path" controls typeof="video/mp4" style="max-width:100%"></video>
+
+                                            }
+
+                                        </a>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="post-additional-info inline-items">
+
+                                <a href="Javascript:void(0)" onclick="likeciclk(@item.cpost.id,this)" class="post-add-icon inline-items">
+                                    <svg class="olymp-heart-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+
+                                    <span>
+                                        @item.cpost.post_like
+                                    </span>
+                                </a>
+
+
+                                @*<input class="commentBox" />
+
+            <div>
+                <button href="Javascript:void(0)" onclick="btnclick(@item.cpost.id,this)">Submit</button>
+            </div>*@
+
+                                <div class="input-group">
+                                    <div class="form-group is-empty mb-0">
+                                        <input type="text" class="form-control commentBox" placeholder="Comment here..">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+
+                                <div class="comments-shared" onclick="addcomment(@item.cpost.id,this)">
+                                    <a href="javascript:void(0)" id="choose-from-my-photo" class="post-add-icon inline-items">
+                                        <svg class="olymp-speech-balloon-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+
+                                        @*<span>0</span>*@
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div class="w-100">
+                                <ul class="comment_list">
+                                    @foreach (comment co in item.cpostComments)
+                                    {
+                                        <li><p>@co.comment_text</p></li>
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class="control-block-button post-control-button">
+
+
+                                <a href="Javascript:void(0)" onclick="likeciclk(@item.cpost.id,this)" class="btn btn-control">
+
+                                    <svg class="olymp-like-post-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
+                                </a>
+
+                                <a href="#" id="update-header-photo" class="btn btn-control">
+
+                                    <svg class="olymp-comments-post-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+                                </a>
+
+
+
+                            </div>
+
+                        </article>
+                    </div>
+                }
+
+
+            </div>
+
+            <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+        </main>
+
+        <!-- ... end Main Content -->
+        <!-- Left Sidebar -->
+
+        <div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
+
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Profile Intro</h6>
+                </div>
+                <div class="ui-block-content">
+
+                    <!-- W-Personal-Info -->
+
+                    <ul class="widget w-personal-info item-block">
+
+                        <li>
+                            <span class="title">About Me:</span>
+                            <span class="text">
+                                @Html.Label("user_bio", (string)ProfileIntro.user_bio)
+
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Website</span>
+                            <span class="text">
+
+                                @Html.Label("user_website", (string)ProfileIntro.user_website)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Email</span>
+                            <span class="text">
+                                @Html.Label("user_email", (string)ProfileIntro.user_email)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">gender</span>
+                            <span class="text">
+
+                                @Html.Label("user_gender", (string)ProfileIntro.user_gender)
+
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Hobbies</span>
+                            <span class="text">
+                                @Html.Label("hobbies", (string)ProfileIntro.hobbies)
+
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Favourite TV Shows:</span>
+                            <span class="text">
+                                @Html.Label("favourite_tv_shows", (string)ProfileIntro.favorite_tv_shows)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title"> Higher Secondary School :</span>
+                            <span class="text">
+                                @Html.Label("secondary_school", (string)ProfileIntro.secondary_school)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Graduation College Name :</span>
+                            <span class="text">
+                                @Html.Label("college_name", (string)ProfileIntro.college_name)
+                            </span>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- .. end W-Personal-Info -->
+                </div>
+            </div>
+
+
+
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Last Videos</h6>
+                </div>
+                <div class="ui-block-content">
+
+                    <!-- W-Latest-Video -->
+                    @foreach (var item in ProfileIntro.videos)
+                    {
+                        <ul class="widget w-last-video">
+
+                            <div class="video-frame">
+                                <video style="width:200px; height:150px;" controls="controls">
+                                    <source src="@item.media_path" type="video/mp4" />
+                                </video>
+                            </div>
+
+
+                        </ul>
+                    }
+                    <!-- .. end W-Latest-Video -->
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ... end Left Sidebar -->
+        <!-- Right Sidebar -->
+        <div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Last Photos</h6>
+                </div>
+                <div class="ui-block-content">
+
+                    <!-- W-Latest-Photo -->
+
+                    <ul class="widget w-last-photo">
+                        @foreach (var item in ProfileIntro.posts)
+                        {
+                            <li>
+                                <a href="Javascript:void(0)">
+                                    <img src="@item.media_path" alt="photo">
+                                </a>
+                            </li>
+                        }
+
+
+                    </ul>
+
+
+                    <!-- .. end W-Latest-Photo -->
+                </div>
+            </div>
+
+
+
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">
+                        Friends ( @ProfileIntro.friendsCount )
+                    </h6>
+                </div>
+                <div class="ui-block-content">
+
+                    <!-- W-Faved-Page -->
+
+                    <ul class="widget w-faved-page ">
+                        @foreach (var item in Frindlist)
+                        {
+                            <li>
+                                <a href="/ProfileTimeline?passuserId=@item.id">
+                                    <img src=..@item.user_profilephoto alt="author">
+                                </a>
+                            </li>
+                        }
+                        <li class="all-users">
+                            <a href="#">
+                                @ProfileIntro.friendsCount
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <!-- .. end W-Faved-Page -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ... end Right Sidebar -->
+
+    </div>
+</div>
+
+
+<!-- Window-popup Update Header Photo -->
+
+<div class="modal fade" id="video_post" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+    <div class="modal-dialog window-popup update-header-photo" role="document">
+        <div class="modal-content">
+            <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+                <svg class="olymp-close-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+            </a>
+
+            <div class="modal-header">
+                <h6 class="title">Update Header Photo</h6>
+            </div>
+
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ... end Window-popup Update Header Photo -->
+<!-- ... end Window-popup Choose from my Photo -->
+@*<script>
+    function addajex(id,qty,flag) {
+
+
+
+        //function likeciclk(id) {
+        //    $.ajax({
+        //        url: "/NewsFeed/addLike?id=" + id,
+        //        method: "GET",
+        //    }).done(function () {
+
+        //    });
+        //}
+    </script>*@
+
+
+@section Scripts {
+    <script type="text/javascript">
+        function likeciclk(id,el) {
+            $.ajax({
+                type: "Get",
+                url: "@Url.Action("addLike")",
+                data: { id: id},
+                dataType: "text",
+                success: function (msg) {
+                    //debugger;
+                    var test = $(el).parents('article').find('.post-additional-info>.post-add-icon span').text();
+                    var newtest = parseInt(test) + 1;
+                    $(el).parents('article').find('.post-additional-info>.post-add-icon span').text(parseInt(newtest));
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+        }
+        function addcomment(id,el) {
+
+            var cbox = $(el).parent().find(".commentBox").val();
+            console.log(cbox, id);
+            if (cbox != "" || cbox != null) {
+            $.ajax({
+                type: "Get",
+                url: "@Url.Action("addComment")",
+                data: { id: id, ctext: cbox},
+                dataType: "text",
+                success: function (msg) {
+                    //debugger;
+                    $(el).parents('article').find('.comment_list').prepend("<li><p>" + msg + "</p></li>");
+                    $(el).parents('article').find('.comment_list').children("li").last().remove();
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+                }
+        }
+    </script>
+}
+
+

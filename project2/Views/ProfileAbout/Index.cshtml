@@ -1,0 +1,257 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+       Layout = "~/Views/Shared/_MenuLayoutPage.cshtml";
+       Layout = "~/Views/Shared/_ProfileMenuLayoutPage1.cshtml";
+    var viewbaghobbies = ViewBag.edithobbiesdata;
+    var viewbageducation =  ViewBag.editeducationdata;
+    var viewbagusers= ViewBag.edituserdata;
+
+}
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Hobbies and Interests</h6>
+                    <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+                </div>
+                <div class="ui-block-content">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+
+
+                            <!-- W-Personal-Info -->
+
+                            <ul class="widget w-personal-info item-block">
+                                <li>
+                                    <span class="title">Hobbies:</span>
+                                    <span class="text">
+                                        @Html.Label("hobbies", (string)viewbaghobbies.hobbies)
+
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Favourite TV Shows:</span>
+                                    <span class="text">
+                                        @Html.Label("hobbies", (string)viewbaghobbies.favorite_tv_shows)
+
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Favourite Movies:</span>
+                                    <span class="text">
+                                        @Html.Label("hobbies", (string)viewbaghobbies.favorite_movies)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Favourite Games:</span>
+                                    <span class="text">
+                                        @Html.Label("hobbies", (string)viewbaghobbies.favorite_games)
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- ... end W-Personal-Info -->
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+
+
+                            <!-- W-Personal-Info -->
+
+                            <ul class="widget w-personal-info item-block">
+                              
+                                <li>
+                                    <span class="title">Favourite Books:</span>
+                                    <span class="text">
+                                        @Html.Label("favorite_books", (string)viewbaghobbies.favorite_books)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Favourite Writers:</span>
+                                    <span class="text">
+                                        @Html.Label("favorite_writers", (string)viewbaghobbies.favorite_writers)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Other Interests:</span>
+                                    <span class="text">
+                                        @Html.Label("other_interest", (string)viewbaghobbies.other_interest)
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- ... end W-Personal-Info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Education and Employement</h6>
+                    <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+                </div>
+                <div class="ui-block-content">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+
+
+                            <!-- W-Personal-Info -->
+
+                            <ul class="widget w-personal-info item-block">
+                                <li>
+                                    <span class="title">College Name</span>
+                                    <span class="text">
+                                        @Html.Label("college_name", (string)viewbageducation.college_name)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Period of Time</span>
+                                    <span class="text">
+                                        @Html.Label("college_join_date", (string)viewbageducation.college_join_date)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Description</span>
+                                    <span class="text">
+                                        @Html.Label("address_of_college", (string)viewbageducation.address_of_college)
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- ... end W-Personal-Info -->
+
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+
+
+                            <!-- W-Personal-Info -->
+
+                            <ul class="widget w-personal-info item-block">
+                                <li>
+                                    <span class="title">Secondary School</span>
+                                    <span class="text">
+                                        @Html.Label("secondary_school", (string)viewbageducation.secondary_school)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Period of Time</span>
+                                    <span class="text">
+                                        @Html.Label("school_join_date", (string)viewbageducation.school_join_date)
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Description</span>
+                                    <span class="text">
+                                        @Html.Label("address_of_school", (string)viewbageducation.address_of_school)
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- ... end W-Personal-Info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Personal Info</h6>
+                    <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="~/Content/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+                </div>
+                <div class="ui-block-content">
+
+
+                    <!-- W-Personal-Info -->
+
+                    <ul class="widget w-personal-info">
+                        <li>
+                            <span class="title">About Me:</span>
+                            <span class="text">
+                                @Html.Label("user_bio", (string)viewbagusers.user_bio)
+
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Birthday:</span>
+                            <span class="text">
+                                @Html.Label("user_dateofbirth", (string)viewbagusers.user_dateofbirth)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Birthplace:</span>
+                            <span class="text">
+                                @Html.Label("user_birthplace", (string)viewbagusers.user_birthplace)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Lives in:</span>
+                            <span class="text">
+                                @Html.Label("user_livesin", (string)viewbagusers.user_livesin)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Occupation:</span>
+                            <span class="text">
+                                @Html.Label("user_occupation", (string)viewbagusers.user_occupation)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Joined:</span>
+                            <span class="text">
+                                @Html.Label("create_date", (string)viewbagusers.user_occupation)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Gender:</span>
+                            <span class="text">
+                                @Html.Label("user_gender", (string)viewbagusers.user_gender)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Status:</span>
+                            <span class="text">
+                                @Html.Label("user_status", (string)viewbagusers.user_status)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Email:</span>
+                            <a href="#" class="text">
+                                @Html.Label("user_email", (string)viewbagusers.user_email)
+                            </a>
+                        </li>
+                        <li>
+                            <span class="title">Website:</span>
+                            <a href="#" class="text">
+                                @Html.Label("user_website", (string)viewbagusers.user_website)
+                            </a>
+                        </li>
+                        <li>
+                            <span class="title">Phone Number:</span>
+                            <span class="text">
+                                @Html.Label("user_contect", (string)viewbagusers.user_contect)
+                            </span>
+                        </li>
+                     
+                    </ul>
+
+                    <!-- ... end W-Personal-Info -->
+                    <!-- W-Socials -->
+
+                   
+
+
+                    <!-- ... end W-Socials -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

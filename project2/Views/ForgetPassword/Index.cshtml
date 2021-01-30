@@ -1,0 +1,144 @@
+﻿@model project2.user
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Company Page - Help & Support Topic</title>
+
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/Bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Bootstrap/dist/css/bootstrap-grid.css">
+
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/fonts.min.css">
+
+    <!-- Main Font -->
+    <script src="~/Scripts/js/webfontloader.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Roboto:300,400,500,700:latin']
+            }
+        });
+    </script>
+
+</head>
+<body class="body-bg-white">
+
+    <!-- Stunning header -->
+
+    <div class="stunning-header bg-primary-opacity">
+
+
+        <div class="header-spacer--standard"></div>
+
+        <div class="stunning-header-content">
+            <h1 class="stunning-header-title">ForgetPassword</h1>
+
+        </div>
+
+        <div class="content-bg-wrap stunning-header-bg1"></div>
+
+
+        <!-- End Stunning header -->
+
+
+        <section class="negative-margin-top50 mb60">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-4 offset-4 ">
+                        <div class="ui-block">
+                            <div class="ui-block-content" style="">
+                                <div class="row">
+                                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        @using (Html.BeginForm("ForgetUser", "ForgetPassword", FormMethod.Post))
+                                        {
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label">Enter Your Searching User ID </label>
+                                                @Html.TextBoxFor(m => m.user_name_id, new { @class = "form-control" })
+                                                <span class="material-input"></span>
+                                            </div>
+                                            <small id="emailHelp" class="form-text text-muted">
+                                                We'll never share your email with anyone
+                                                else.
+                                            </small>
+                                            <br />
+                                            <button class="btn btn-primary" type="submit">Search User</button>
+
+                                        }
+                                        <a href="/Login/Index" class="forgot">Back To Home</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- JS Scripts -->
+    <script src="~/Scripts/js/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/js/jquery.appear.js"></script>
+    <script src="~/Scripts/js/jquery.mousewheel.js"></script>
+    <script src="~/Scripts/js/perfect-scrollbar.js"></script>
+    <script src="~/Scripts/js/jquery.matchHeight.js"></script>
+    <script src="~/Scripts/js/svgxuse.js"></script>
+    <script src="~/Scripts/js/imagesloaded.pkgd.js"></script>
+    <script src="~/Scripts/js/Headroom.js"></script>
+    <script src="~/Scripts/js/velocity.js"></script>
+    <script src="~/Scripts/js/ScrollMagic.js"></script>
+    <script src="~/Scripts/js/jquery.waypoints.js"></script>
+    <script src="~/Scripts/js/jquery.countTo.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/js/material.min.js"></script>
+    <script src="~/Scripts/js/bootstrap-select.js"></script>
+    <script src="~/Scripts/js/smooth-scroll.js"></script>
+    <script src="~/Scripts/js/selectize.js"></script>
+    <script src="~/Scripts/js/swiper.jquery.js"></script>
+    <script src="~/Scripts/js/moment.js"></script>
+    <script src="~/Scripts/js/daterangepicker.js"></script>
+    <script src="~/Scripts/js/simplecalendar.js"></script>
+    <script src="~/Scripts/js/fullcalendar.js"></script>
+    <script src="~/Scripts/js/isotope.pkgd.js"></script>
+    <script src="~/Scripts/js/ajax-pagination.js"></script>
+    <script src="~/Scripts/js/Chart.js"></script>
+    <script src="~/Scripts/js/chartjs-plugin-deferred.js"></script>
+    <script src="~/Scripts/js/circle-progress.js"></script>
+    <script src="~/Scripts/js/loader.js"></script>
+    <script src="~/Scripts/js/run-chart.js"></script>
+    <script src="~/Scripts/js/jquery.magnific-popup.js"></script>
+    <script src="~/Scripts/js/jquery.gifplayer.js"></script>
+    <script src="~/Scripts/js/mediaelement-and-player.js"></script>
+    <script src="~/Scripts/js/mediaelement-playlist-plugin.min.js"></script>
+
+    <script src="~/Scripts/js/base-init.js"></script>
+    <script defer src="fonts/fontawesome-all.js"></script>
+
+    <script src="~/Scripts/Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+
+<!-- Mirrored from html.crumina.net/html-olympus/64-OlympusCompanyPageHelpAndSupportTopic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Jan 2019 19:42:44 GMT -->
+</html>
+

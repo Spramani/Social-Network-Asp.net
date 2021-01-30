@@ -1,0 +1,72 @@
+﻿@model project2.hobby
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashbordLayoutPage.cshtml";
+    //     var Hobbiesdata = ViewBag.edithobbiesdata;
+
+}
+
+
+
+<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+    <div class="ui-block">
+        <div class="ui-block-title">
+            <h6 class="title">Hobbies and Interests</h6>
+        </div>
+        <div class="ui-block-content">
+
+
+            <!-- Form Hobbies and Interests -->
+            @using (Html.BeginForm("Edit", "Hobbies", FormMethod.Post))
+            {
+                <div class="row">
+
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Hobbies</label>
+                            @Html.TextAreaFor(m => m.hobbies, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label">Favourite TV Shows</label>
+                            @Html.TextAreaFor(m => m.favorite_tv_shows, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label">Favourite Movies</label>
+                            @Html.TextAreaFor(m => m.favorite_movies, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label">Favourite Games</label>
+                            @Html.TextAreaFor(m => m.favorite_games, new { @class = "form-control" })
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Favourite Book</label>
+                            @Html.TextAreaFor(m => m.favorite_books, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label">Favourite Books Writer</label>
+                            @Html.TextAreaFor(m => m.favorite_writers, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label">other Interests</label>
+                            @Html.TextAreaFor(m => m.other_interest, new { @class = "form-control" })
+                        </div>
+
+                        <button class="btn btn-primary btn-lg full-width" type="submit">Save all Changes</button>
+                        <button class="btn btn-secondary btn-lg full-width">Cancel</button>
+
+                    </div>
+
+                </div>
+
+
+            }
+            <!-- ... end Form Hobbies and Interests -->
+
+        </div>
+    </div>
+</div>

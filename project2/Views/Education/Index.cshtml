@@ -1,0 +1,90 @@
+﻿@model project2.education   
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashbordLayoutPage.cshtml";
+     var educationdata = ViewBag.editeducationdata;
+
+}
+
+
+<!-- Your Account Personal Information -->
+
+<div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+    <div class="ui-block">
+        <div class="ui-block-title">
+            <h6 class="title">Your Education History</h6>
+        </div>
+        <div class="ui-block-content">
+
+
+            <!-- Education History Form -->
+            @using (Ajax.BeginForm("Edit", "Education", new AjaxOptions { HttpMethod = "POST", OnSuccess = "OnSuccess", OnFailure = "OnFailure", LoadingElementId = "progress" }))
+            {
+
+              @*  @using (Html.BeginForm("Edit", "Education", FormMethod.Post))
+                {*@
+                    <div class="row">
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">College Name</label>
+                                @Html.TextAreaFor(m => m.college_name, new { @class = "form-control" })
+
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Period of Time</label>
+                                @Html.TextAreaFor(m => m.college_join_date, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Description</label>
+                                @Html.TextAreaFor(m => m.address_of_college, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Secondary School</label>
+                                @Html.TextAreaFor(m => m.secondary_school, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Period of Time</label>
+                                @Html.TextAreaFor(m => m.school_join_date, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Description</label>
+                                @Html.TextAreaFor(m => m.address_of_school, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <button class="btn btn-secondary btn-lg full-width">Cancel</button>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <button class="btn btn-primary btn-lg full-width" type="submit">Save all Changes</button>
+                        </div>
+                    </div>
+                }
+
+                <!-- ... end Education History Form -->
+            </div>
+    </div>
+
+</div>
+
+
+<!-- ... end Your Account Personal Information -->
